@@ -227,8 +227,8 @@
   }
 }
 .what-content-flex {
-  display: flex;
-  gap: 5px;
+  height: 100%;
+  overflow: hidden;
   flex-wrap: wrap;
 }
 .what-tags {
@@ -240,6 +240,16 @@
   border-radius: 30px;
 }
 @media only screen and (max-width: 1600px) {
+.what-noTouch:hover .what-content-in,
+.what-content-active .what-content-in {
+  overflow: visible;
+}
+
+/* Make the active/hovered card sit above siblings to prevent clipping */
+.what-noTouch:hover,
+.what-content-active {
+  z-index: 50;
+}
   .what-box h2 {
     margin-right: 18%;
   }

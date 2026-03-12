@@ -1,0 +1,974 @@
+.certifications-section {
+  width: var(--cWidth);
+  max-width: var(--cMaxWidth);
+  margin: auto;
+  padding: 100px 0;
+  position: relative;
+  z-index: 10;
+}
+
+.section-title {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 70px;
+  text-transform: uppercase;
+  color: #fff;
+  position: relative;
+  padding-bottom: 20px;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #2dd4bf 0%, #0891b2 100%);
+  border-radius: 2px;
+}
+
+/* Main Grid Layout */
+.certifications-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* Card Base Styles */
+.cert-card {
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.04) 0%, rgba(8, 145, 178, 0.02) 100%);
+  border: 1.5px solid rgba(45, 212, 191, 0.2);
+  border-radius: 14px;
+  padding: 45px 35px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.cert-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.4), transparent);
+}
+
+.cert-card::after {
+  content: "";
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(45, 212, 191, 0.15) 0%, transparent 70%);
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translate(-50%, 0);
+  pointer-events: none;
+}
+
+.cert-card:hover {
+  border-color: rgba(45, 212, 191, 0.4);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.08) 0%, rgba(8, 145, 178, 0.04) 100%);
+  box-shadow: 0 20px 60px rgba(45, 212, 191, 0.15), inset 0 1px 0 rgba(45, 212, 191, 0.2);
+  transform: translateY(-8px);
+}
+
+.cert-card:hover::after {
+  opacity: 1;
+  top: -50%;
+}
+
+/* Individual Card Styling */
+/* Card 1 - Research Publications */
+.cert-card:nth-child(1) {
+  border-color: rgba(45, 212, 191, 0.25);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.06) 0%, rgba(8, 145, 178, 0.03) 100%);
+}
+
+.cert-card:nth-child(1):hover {
+  border-color: rgba(45, 212, 191, 0.5);
+  box-shadow: 0 20px 60px rgba(45, 212, 191, 0.2), inset 0 1px 0 rgba(45, 212, 191, 0.3);
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.12) 0%, rgba(8, 145, 178, 0.06) 100%);
+}
+
+/* Card 2 - Patents */
+.cert-card:nth-child(2) {
+  border-color: rgba(168, 85, 247, 0.25);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.04) 0%, rgba(139, 92, 246, 0.02) 100%);
+}
+
+.cert-card:nth-child(2):hover {
+  border-color: rgba(168, 85, 247, 0.5);
+  box-shadow: 0 20px 60px rgba(168, 85, 247, 0.15), inset 0 1px 0 rgba(168, 85, 247, 0.2);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.10) 0%, rgba(139, 92, 246, 0.05) 100%);
+}
+
+.cert-card:nth-child(2) .cert-card-icon {
+  filter: drop-shadow(0 4px 12px rgba(168, 85, 247, 0.3));
+}
+
+.cert-card:nth-child(2):hover .cert-card-icon {
+  filter: drop-shadow(0 6px 20px rgba(168, 85, 247, 0.5));
+}
+
+/* Card 3 - Cybersecurity */
+.cert-card:nth-child(3) {
+  border-color: rgba(59, 130, 246, 0.25);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.04) 0%, rgba(37, 99, 235, 0.02) 100%);
+}
+
+.cert-card:nth-child(3):hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 20px 60px rgba(59, 130, 246, 0.15), inset 0 1px 0 rgba(59, 130, 246, 0.2);
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.10) 0%, rgba(37, 99, 235, 0.05) 100%);
+}
+
+.cert-card:nth-child(3) .cert-card-icon {
+  filter: drop-shadow(0 4px 12px rgba(59, 130, 246, 0.3));
+}
+
+.cert-card:nth-child(3):hover .cert-card-icon {
+  filter: drop-shadow(0 6px 20px rgba(59, 130, 246, 0.5));
+}
+
+/* Card 4 - Programming */
+.cert-card:nth-child(4) {
+  border-color: rgba(34, 197, 94, 0.25);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.04) 0%, rgba(22, 163, 74, 0.02) 100%);
+}
+
+.cert-card:nth-child(4):hover {
+  border-color: rgba(34, 197, 94, 0.5);
+  box-shadow: 0 20px 60px rgba(34, 197, 94, 0.15), inset 0 1px 0 rgba(34, 197, 94, 0.2);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.10) 0%, rgba(22, 163, 74, 0.05) 100%);
+}
+
+.cert-card:nth-child(4) .cert-card-icon {
+  filter: drop-shadow(0 4px 12px rgba(34, 197, 94, 0.3));
+}
+
+.cert-card:nth-child(4):hover .cert-card-icon {
+  filter: drop-shadow(0 6px 20px rgba(34, 197, 94, 0.5));
+}
+
+/* Card 5 - Programming Skills */
+.cert-card:nth-child(5) {
+  border-color: rgba(236, 72, 153, 0.25);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.04) 0%, rgba(219, 39, 119, 0.02) 100%);
+}
+
+.cert-card:nth-child(5):hover {
+  border-color: rgba(236, 72, 153, 0.5);
+  box-shadow: 0 20px 60px rgba(236, 72, 153, 0.15), inset 0 1px 0 rgba(236, 72, 153, 0.2);
+  background: linear-gradient(135deg, rgba(236, 72, 153, 0.10) 0%, rgba(219, 39, 119, 0.05) 100%);
+}
+
+.cert-card:nth-child(5) .cert-card-icon {
+  filter: drop-shadow(0 4px 12px rgba(236, 72, 153, 0.3));
+}
+
+.cert-card:nth-child(5):hover .cert-card-icon {
+  filter: drop-shadow(0 6px 20px rgba(236, 72, 153, 0.5));
+}
+
+/* Card 6 - Analytics & Forensics */
+.cert-card:nth-child(6) {
+  border-color: rgba(245, 158, 11, 0.25);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.04) 0%, rgba(217, 119, 6, 0.02) 100%);
+}
+
+.cert-card:nth-child(6):hover {
+  border-color: rgba(245, 158, 11, 0.5);
+  box-shadow: 0 20px 60px rgba(245, 158, 11, 0.15), inset 0 1px 0 rgba(245, 158, 11, 0.2);
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.10) 0%, rgba(217, 119, 6, 0.05) 100%);
+}
+
+.cert-card:nth-child(6) .cert-card-icon {
+  filter: drop-shadow(0 4px 12px rgba(245, 158, 11, 0.3));
+}
+
+.cert-card:nth-child(6):hover .cert-card-icon {
+  filter: drop-shadow(0 6px 20px rgba(245, 158, 11, 0.5));
+}
+
+/* Card 7 - Networking */
+.cert-card:nth-child(7) {
+  border-color: rgba(8, 145, 178, 0.25);
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.04) 0%, rgba(6, 78, 59, 0.02) 100%);
+}
+
+.cert-card:nth-child(7):hover {
+  border-color: rgba(8, 145, 178, 0.5);
+  box-shadow: 0 20px 60px rgba(8, 145, 178, 0.15), inset 0 1px 0 rgba(8, 145, 178, 0.2);
+  background: linear-gradient(135deg, rgba(8, 145, 178, 0.10) 0%, rgba(6, 78, 59, 0.05) 100%);
+}
+
+.cert-card:nth-child(7) .cert-card-icon {
+  filter: drop-shadow(0 4px 12px rgba(8, 145, 178, 0.3));
+}
+
+.cert-card:nth-child(7):hover .cert-card-icon {
+  filter: drop-shadow(0 6px 20px rgba(8, 145, 178, 0.5));
+}
+
+/* Card 8 - Achievements */
+.achievements-card {
+  border-color: rgba(167, 139, 250, 0.25);
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.06) 0%, rgba(139, 92, 246, 0.03) 100%);
+}
+
+.achievements-card:hover {
+  border-color: rgba(167, 139, 250, 0.5);
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.12) 0%, rgba(139, 92, 246, 0.06) 100%);
+  box-shadow: 0 20px 60px rgba(167, 139, 250, 0.2), inset 0 1px 0 rgba(167, 139, 250, 0.3);
+}
+
+.achievements-card .cert-card-icon {
+  filter: drop-shadow(0 4px 12px rgba(167, 139, 250, 0.4));
+}
+
+.achievements-card:hover .cert-card-icon {
+  filter: drop-shadow(0 6px 20px rgba(167, 139, 250, 0.6));
+}
+
+/* Card Header */
+.cert-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.cert-card-icon {
+  font-size: 44px;
+  min-width: 54px;
+  text-align: center;
+  opacity: 0.98;
+  filter: drop-shadow(0 4px 12px rgba(45, 212, 191, 0.2));
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover .cert-card-icon {
+  transform: scale(1.1) rotate(5deg);
+  filter: drop-shadow(0 6px 20px rgba(45, 212, 191, 0.4));
+}
+
+.cert-card-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: #fff;
+  background: linear-gradient(135deg, #e0f0ff 0%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transition: all 0.3s ease;
+}
+
+.cert-card:hover .cert-card-header h3 {
+  letter-spacing: 1px;
+}
+
+/* Card Content */
+.cert-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.cert-card-subtitle {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #2dd4bf;
+  font-weight: 600;
+  margin: 0;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+}
+
+.cert-card:nth-child(2) .cert-card-subtitle {
+  color: #d8b4fe;
+}
+
+.cert-card:nth-child(3) .cert-card-subtitle {
+  color: #93c5fd;
+}
+
+.cert-card:nth-child(4) .cert-card-subtitle {
+  color: #86efac;
+}
+
+.cert-card:nth-child(5) .cert-card-subtitle {
+  color: #f472b6;
+}
+
+.cert-card:nth-child(6) .cert-card-subtitle {
+  color: #fcd34d;
+}
+
+.cert-card:nth-child(7) .cert-card-subtitle {
+  color: #06b6d4;
+}
+
+.achievements-card .cert-card-subtitle {
+  color: #d8b4fe;
+}
+
+.cert-card:hover .cert-card-subtitle {
+  opacity: 1;
+  letter-spacing: 1.4px;
+}
+
+/* Certification Tags */
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cert-tag {
+  background: rgba(45, 212, 191, 0.08);
+  border: 1.5px solid rgba(45, 212, 191, 0.25);
+  color: #e0f0ff;
+  padding: 9px 15px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.cert-tag:hover {
+  background: rgba(45, 212, 191, 0.18);
+  border-color: rgba(45, 212, 191, 0.6);
+  color: #2dd4bf;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 16px rgba(45, 212, 191, 0.12);
+}
+
+/* Card-specific tag colors */
+.cert-card:nth-child(2) .cert-tag {
+  border-color: rgba(168, 85, 247, 0.3);
+  background: rgba(168, 85, 247, 0.08);
+}
+
+.cert-card:nth-child(2) .cert-tag:hover {
+  background: rgba(168, 85, 247, 0.18);
+  border-color: rgba(168, 85, 247, 0.6);
+  color: #d8b4fe;
+  box-shadow: 0 8px 16px rgba(168, 85, 247, 0.12);
+}
+
+.cert-card:nth-child(3) .cert-tag {
+  border-color: rgba(59, 130, 246, 0.3);
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.cert-card:nth-child(3) .cert-tag:hover {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: rgba(59, 130, 246, 0.6);
+  color: #93c5fd;
+  box-shadow: 0 8px 16px rgba(59, 130, 246, 0.12);
+}
+
+.cert-card:nth-child(4) .cert-tag {
+  border-color: rgba(34, 197, 94, 0.3);
+  background: rgba(34, 197, 94, 0.08);
+}
+
+.cert-card:nth-child(4) .cert-tag:hover {
+  background: rgba(34, 197, 94, 0.18);
+  border-color: rgba(34, 197, 94, 0.6);
+  color: #86efac;
+  box-shadow: 0 8px 16px rgba(34, 197, 94, 0.12);
+}
+
+.cert-card:nth-child(5) .cert-tag {
+  border-color: rgba(236, 72, 153, 0.3);
+  background: rgba(236, 72, 153, 0.08);
+}
+
+.cert-card:nth-child(5) .cert-tag:hover {
+  background: rgba(236, 72, 153, 0.18);
+  border-color: rgba(236, 72, 153, 0.6);
+  color: #f472b6;
+  box-shadow: 0 8px 16px rgba(236, 72, 153, 0.12);
+}
+
+.cert-card:nth-child(6) .cert-tag {
+  border-color: rgba(245, 158, 11, 0.3);
+  background: rgba(245, 158, 11, 0.08);
+}
+
+.cert-card:nth-child(6) .cert-tag:hover {
+  background: rgba(245, 158, 11, 0.18);
+  border-color: rgba(245, 158, 11, 0.6);
+  color: #fcd34d;
+  box-shadow: 0 8px 16px rgba(245, 158, 11, 0.12);
+}
+
+.cert-card:nth-child(7) .cert-tag {
+  border-color: rgba(8, 145, 178, 0.3);
+  background: rgba(8, 145, 178, 0.08);
+}
+
+.cert-card:nth-child(7) .cert-tag:hover {
+  background: rgba(8, 145, 178, 0.18);
+  border-color: rgba(8, 145, 178, 0.6);
+  color: #06b6d4;
+  box-shadow: 0 8px 16px rgba(8, 145, 178, 0.12);
+}
+
+.achievements-card .cert-tag {
+  border-color: rgba(167, 139, 250, 0.3);
+  background: rgba(167, 139, 250, 0.08);
+}
+
+.achievements-card .cert-tag:hover {
+  background: rgba(167, 139, 250, 0.18);
+  border-color: rgba(167, 139, 250, 0.6);
+  color: #d8b4fe;
+  box-shadow: 0 8px 16px rgba(167, 139, 250, 0.12);
+}
+
+/* Research List */
+.research-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.research-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 13px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.research-item:hover {
+  color: #e0f0ff;
+  transform: translateX(6px);
+}
+
+.research-bullet {
+  color: #2dd4bf;
+  font-weight: 600;
+  flex-shrink: 0;
+  opacity: 0.8;
+  font-size: 14px;
+}
+
+/* Patents List */
+.patents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.patent-item {
+  background: rgba(45, 212, 191, 0.06);
+  border: 1px solid rgba(45, 212, 191, 0.2);
+  border-left: 3px solid rgba(45, 212, 191, 0.4);
+  border-radius: 8px;
+  padding: 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.patent-item:hover {
+  background: rgba(45, 212, 191, 0.12);
+  border-left-color: rgba(45, 212, 191, 0.8);
+  box-shadow: 0 8px 20px rgba(45, 212, 191, 0.12);
+  transform: translateX(4px);
+}
+
+.patent-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.patent-badge {
+  background: rgba(45, 212, 191, 0.15);
+  color: #2dd4bf;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  white-space: nowrap;
+}
+
+.patent-status {
+  background: rgba(8, 145, 178, 0.15);
+  color: #0891b2;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border: 1px solid rgba(8, 145, 178, 0.4);
+  white-space: nowrap;
+}
+
+.patent-name {
+  font-size: 13px;
+  color: #cbd5e1;
+  margin: 0;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.patent-item:hover .patent-name {
+  color: #e0f0ff;
+}
+
+/* Achievements List */
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievement-item {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 13px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+  color: #e0f0ff;
+  transform: translateX(4px);
+}
+
+.achievement-bullet {
+  color: #a78bfa;
+  font-weight: 700;
+  flex-shrink: 0;
+  opacity: 0.85;
+  font-size: 14px;
+}
+
+/* Achievements Card Special Styling */
+.achievements-card {
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.04) 0%, rgba(139, 92, 246, 0.02) 100%);
+  border-color: rgba(167, 139, 250, 0.2);
+}
+
+.achievements-card:hover {
+  border-color: rgba(167, 139, 250, 0.4);
+  background: linear-gradient(135deg, rgba(167, 139, 250, 0.08) 0%, rgba(139, 92, 246, 0.04) 100%);
+  box-shadow: 0 20px 60px rgba(167, 139, 250, 0.15), inset 0 1px 0 rgba(167, 139, 250, 0.2);
+}
+
+.achievements-card .cert-card-icon {
+  filter: drop-shadow(0 4px 12px rgba(167, 139, 250, 0.2));
+}
+
+.achievements-card:hover .cert-card-icon {
+  filter: drop-shadow(0 6px 20px rgba(167, 139, 250, 0.4));
+}
+
+/* Stats Badge */
+.cert-card-stats {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(45, 212, 191, 0.12);
+}
+
+.stat-badge {
+  background: rgba(45, 212, 191, 0.12);
+  color: #2dd4bf;
+  padding: 7px 15px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  transition: all 0.3s ease;
+}
+
+.stat-badge:hover {
+  background: rgba(45, 212, 191, 0.2);
+  border-color: rgba(45, 212, 191, 0.5);
+}
+
+/* Card Header */
+.cert-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+.cert-card-icon {
+  font-size: 40px;
+  min-width: 50px;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.cert-card-header h3 {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 0;
+  color: #fff;
+}
+
+/* Card Content */
+.cert-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+  z-index: 2;
+  flex: 1;
+}
+
+.cert-card-subtitle {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #2dd4bf;
+  font-weight: 600;
+  margin: 0;
+  opacity: 0.85;
+}
+
+/* Certification Tags */
+.cert-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cert-tag {
+  background: transparent;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+  color: #e0f0ff;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.cert-tag:hover {
+  background: rgba(45, 212, 191, 0.1);
+  border-color: rgba(45, 212, 191, 0.6);
+  color: #2dd4bf;
+}
+
+/* Research List */
+.research-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.research-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.6;
+  transition: all 0.3s ease;
+}
+
+.research-item:hover {
+  color: #e0f0ff;
+  transform: translateX(4px);
+}
+
+.research-bullet {
+  color: #2dd4bf;
+  font-weight: 600;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+/* Patents List */
+.patents-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.patent-item {
+  background: transparent;
+  border: none;
+  border-left: 3px solid rgba(45, 212, 191, 0.3);
+  border-radius: 0;
+  padding: 12px 14px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.patent-item:hover {
+  border-left-color: rgba(45, 212, 191, 0.8);
+  background: rgba(45, 212, 191, 0.05);
+  padding-left: 18px;
+}
+
+.patent-badge {
+  background: transparent;
+  color: #2dd4bf;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  flex-shrink: 0;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+}
+
+/* Stats Badge */
+.cert-card-stats {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid rgba(45, 212, 191, 0.12);
+}
+
+.stat-badge {
+  background: transparent;
+  color: #2dd4bf;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+  .certifications-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+  }
+
+  .certifications-section {
+    padding: 80px 0;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .certifications-section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .certifications-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .cert-card {
+    padding: 35px 25px;
+    gap: 20px;
+  }
+
+  .cert-card-header h3 {
+    font-size: 22px;
+  }
+
+  .cert-tags {
+    gap: 8px;
+  }
+
+  .cert-tag {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+
+  .research-item,
+  .patent-item {
+    font-size: 13px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .certifications-section {
+    padding: 40px 0;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 35px;
+  }
+
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+  }
+
+  .certifications-grid {
+    gap: 18px;
+  }
+
+  .cert-card {
+    padding: 25px 18px;
+    gap: 16px;
+  }
+
+  .cert-card-header {
+    gap: 12px;
+  }
+
+  .cert-card-icon {
+    font-size: 32px;
+    min-width: 40px;
+  }
+
+  .cert-card-header h3 {
+    font-size: 19px;
+  }
+
+  .cert-card-subtitle {
+    font-size: 11px;
+  }
+
+  .cert-tags {
+    gap: 6px;
+  }
+
+  .cert-tag {
+    font-size: 11px;
+    padding: 5px 10px;
+  }
+
+  .research-item,
+  .patent-item {
+    font-size: 13px;
+    padding: 8px 0;
+  }
+
+  .stat-badge {
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+}
+
+/* Patent Status Badge */
+.patent-badges {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.patent-status {
+  background: rgba(8, 145, 178, 0.15);
+  color: #0891b2;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  border: 1px solid rgba(8, 145, 178, 0.4);
+  white-space: nowrap;
+}
+
+/* Achievements List */
+.achievements-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievement-item {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #cbd5e1;
+  line-height: 1.5;
+  transition: all 0.3s ease;
+}
+
+.achievement-item:hover {
+  color: #e0f0ff;
+  transform: translateX(4px);
+}
+
+.achievement-bullet {
+  color: #2dd4bf;
+  font-weight: 700;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+/* Achievements Card Special Styling */
+.achievements-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(139, 92, 246, 0.2);
+}
+
+.achievements-card:hover {
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+.achievements-card .cert-card-icon {
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.3));
+}

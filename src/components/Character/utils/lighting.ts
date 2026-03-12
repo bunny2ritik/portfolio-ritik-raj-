@@ -3,6 +3,7 @@ import { RGBELoader } from "three-stdlib";
 import { gsap } from "gsap";
 
 const setLighting = (scene: THREE.Scene) => {
+  // Hacker/Cyberpunk lighting setup
   const directionalLight = new THREE.DirectionalLight(0x5eead4, 0);
   directionalLight.intensity = 0;
   directionalLight.position.set(-0.47, -0.32, -1);
@@ -13,10 +14,16 @@ const setLighting = (scene: THREE.Scene) => {
   directionalLight.shadow.camera.far = 50;
   scene.add(directionalLight);
 
+  // Primary cyan accent light (hacker theme)
   const pointLight = new THREE.PointLight(0x22d3ee, 0, 100, 3);
   pointLight.position.set(3, 12, 4);
   pointLight.castShadow = true;
   scene.add(pointLight);
+
+  // Secondary magenta accent light for cyberpunk vibe
+  const accentLight = new THREE.PointLight(0xec4899, 0, 80, 2);
+  accentLight.position.set(-4, 8, -3);
+  scene.add(accentLight);
 
   new RGBELoader()
     .setPath("/models/")
@@ -30,8 +37,10 @@ const setLighting = (scene: THREE.Scene) => {
   function setPointLight(screenLight: any) {
     if (screenLight.material.opacity > 0.9) {
       pointLight.intensity = screenLight.material.emissiveIntensity * 20;
+      accentLight.intensity = screenLight.material.emissiveIntensity * 15;
     } else {
       pointLight.intensity = 0;
+      accentLight.intensity = 0;
     }
   }
   const duration = 2;
@@ -46,6 +55,13 @@ const setLighting = (scene: THREE.Scene) => {
       intensity: 1,
       duration: duration,
       ease: ease,
+    });
+    // Animate accent light on
+    gsap.to(accentLight, {
+      intensity: 1,
+      duration: duration,
+      ease: ease,
+      delay: 0.3,
     });
     gsap.to(".character-rim", {
       y: "55%",

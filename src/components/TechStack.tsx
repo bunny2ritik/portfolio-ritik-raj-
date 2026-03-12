@@ -13,26 +13,35 @@ import {
 
 const textureLoader = new THREE.TextureLoader();
 const imageUrls = [
-  "/images/react2.webp",
-  "/images/next2.webp",
-  "/images/node2.webp",
-  "/images/express.webp",
-  "/images/mongo.webp",
-  "/images/mysql.webp",
-  "/images/typescript.webp",
-  "/images/javascript.webp",
+  "/images/python.png",
+  "/images/kali-linux.png",
+  "/images/aws.png",
+  "/images/git.png",
+  "/images/java.png",
+  "/images/kotlin.png",
+  "/images/node2.png",
+  "/images/sql.png",
+  "/images/wireshark.png",
 ];
-const textures = imageUrls.map((url) => textureLoader.load(url));
+const textures = imageUrls.map((url) => {
+  const texture = textureLoader.load(url);
+  texture.magFilter = THREE.LinearFilter;
+  texture.minFilter = THREE.LinearMipmapLinearFilter;
+  return texture;
+});
 
-const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
+const sphereGeometry = new THREE.SphereGeometry(1, 32, 32);
 
-const spheres = [...Array(30)].map(() => ({
-  scale: [0.7, 1, 0.8, 1, 1][Math.floor(Math.random() * 5)],
+// Create exactly 9 spheres for the 9 tech items
+const spheres = [...Array(9)].map((_, i) => ({
+  scale: [0.8, 1, 0.9, 1, 1][Math.floor(Math.random() * 5)],
+  textureIndex: i,
 }));
 
 type SphereProps = {
   vec?: THREE.Vector3;
   scale: number;
+  textureIndex: number;
   r?: typeof THREE.MathUtils.randFloatSpread;
   material: THREE.MeshPhysicalMaterial;
   isActive: boolean;
@@ -41,6 +50,7 @@ type SphereProps = {
 function SphereGeo({
   vec = new THREE.Vector3(),
   scale,
+  textureIndex,
   r = THREE.MathUtils.randFloatSpread,
   material,
   isActive,
@@ -156,12 +166,13 @@ const TechStack = () => {
       (texture) =>
         new THREE.MeshPhysicalMaterial({
           map: texture,
-          emissive: "#ffffff",
+          emissive: "#444444",
           emissiveMap: texture,
-          emissiveIntensity: 0.3,
-          metalness: 0.5,
-          roughness: 1,
-          clearcoat: 0.1,
+          emissiveIntensity: 0.8,
+          metalness: 0.3,
+          roughness: 0.6,
+          clearcoat: 0.2,
+          side: THREE.DoubleSide,
         })
     );
   }, []);
@@ -193,7 +204,7 @@ const TechStack = () => {
             <SphereGeo
               key={i}
               {...props}
-              material={materials[Math.floor(Math.random() * materials.length)]}
+              material={materials[props.textureIndex]}
               isActive={isActive}
             />
           ))}

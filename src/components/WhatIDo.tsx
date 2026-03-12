@@ -87,22 +87,22 @@ const WhatIDo = () => {
             <div className="what-corner"></div>
 
             <div className="what-content-in">
-              <h3>FRONTEND</h3>
-              <h4>Building Interactive UIs</h4>
+              <h3>Cybersecurity Engineering</h3>
+              <h4>Building Secure Applications</h4>
               <p>
-                Crafting performant, responsive interfaces with modern frameworks.
-                From SPAs to micro-frontends, I deliver pixel-perfect experiences.
+                Developing security-focused systems for detecting, analyzing, and mitigating cyber threats. 
+                Experienced in penetration testing, vulnerability assessment, and network security analysis 
+                using modern cybersecurity tools and methodologies.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">React.js</div>
-                <div className="what-tags">Angular</div>
-                <div className="what-tags">Next.js</div>
-                <div className="what-tags">TypeScript</div>
-                <div className="what-tags">JavaScript</div>
-                <div className="what-tags">Material UI</div>
-                <div className="what-tags">HTML5</div>
-                <div className="what-tags">CSS3</div>
+                <div className="what-tags">Penetration Testing</div>
+                <div className="what-tags">Vulnerability Assessment</div>
+                <div className="what-tags">Network Security</div>
+                <div className="what-tags">Packet Analysis</div>
+                <div className="what-tags">Packet Analysis</div>
+                <div className="what-tags">Bug Bounty Research</div>
+                <div className="what-tags">Threat Detection</div>
               </div>
               <div className="what-arrow"></div>
             </div>
@@ -126,22 +126,20 @@ const WhatIDo = () => {
             </div>
             <div className="what-corner"></div>
             <div className="what-content-in">
-              <h3>BACKEND</h3>
-              <h4>Scalable Server Architecture</h4>
+              <h3>Security Tool Development</h3>
+              <h4>Building Custom Security Solutions</h4>
               <p>
-                Designing robust APIs and microservices. From CMS platforms to
-                complex business logic, I build backends that scale.
+                Building intelligent security tools and monitoring platforms that analyze 
+                network behavior and detect suspicious activity in real time.
               </p>
               <h5>Skillset & tools</h5>
               <div className="what-content-flex">
-                <div className="what-tags">Node.js</div>
-                <div className="what-tags">NestJS</div>
-                <div className="what-tags">Express.js</div>
-                <div className="what-tags">MongoDB</div>
-                <div className="what-tags">PostgreSQL</div>
-                <div className="what-tags">REST APIs</div>
-                <div className="what-tags">Microservices</div>
                 <div className="what-tags">Python</div>
+                <div className="what-tags">Security Automation</div>
+                <div className="what-tags">Dash / Data Visualization</div>
+                <div className="what-tags">REST API/s</div>
+                <div className="what-tags">Network Monitoring</div>
+              
               </div>
               <div className="what-arrow"></div>
             </div>

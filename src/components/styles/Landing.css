@@ -170,9 +170,14 @@
 
 .landing-intro {
   position: absolute;
-  z-index: 9;
+  /* bring intro above the fixed character canvas so it remains visible */
+  z-index: 9999;
   top: 12%;
-  left: 0;
+  /* responsive left offset that stays within the container */
+  left: clamp(2%, 6%, 8%);
+  /* constrain width so very large fonts/line-heights don't overflow */
+  max-width: min(480px, 40%);
+  box-sizing: border-box;
 }
 
 .landing-intro h2 {
@@ -337,8 +342,9 @@ h2.landing-info-h2 {
 
   .landing-intro {
     top: 50%;
-    left: auto;
-    right: 66%;
+    /* use a left offset so the intro stays visible on wide viewports */
+    left: 6%;
+    right: auto;
     transform: translate(0%, -50%);
   }
 
@@ -356,8 +362,9 @@ h2.landing-info-h2 {
 @media screen and (min-width: 1200px) {
   .landing-intro {
     top: 50%;
-    left: auto;
-    right: 70%;
+    /* keep intro on the left side with a small offset */
+    left: 6%;
+    right: auto;
     transform: translate(0%, -50%);
   }
 
@@ -394,4 +401,18 @@ h2.landing-info-h2 {
   h2.landing-info-h2 {
     font-size: 75px;
   }
+  
+  /* keep intro visible on very wide screens as well */
+  .landing-intro {
+    left: 6%;
+    right: auto;
+    /* slightly reduce font on ultra-wide displays to avoid overflow */
+    max-width: 520px;
+  }
+}
+
+/* Ensure heading text wraps and doesn't get clipped */
+.landing-intro h1 {
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
