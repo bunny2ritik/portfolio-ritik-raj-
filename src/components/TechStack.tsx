@@ -40,7 +40,7 @@ const spheres = [...Array(9)].map((_, i) => ({
 
 type SphereProps = {
   vec?: THREE.Vector3;
-  scale: number;
+  scale?: number;
   textureIndex: number;
   r?: typeof THREE.MathUtils.randFloatSpread;
   material: THREE.MeshPhysicalMaterial;
@@ -49,8 +49,8 @@ type SphereProps = {
 
 function SphereGeo({
   vec = new THREE.Vector3(),
-  scale,
-  textureIndex,
+  scale = 1,
+  textureIndex: _textureIndex, // Material is passed separately, index not needed in component
   r = THREE.MathUtils.randFloatSpread,
   material,
   isActive,
